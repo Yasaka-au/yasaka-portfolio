@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satoru | Visual Storyteller & Graphic Designer</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Portfolio of Satoru, a graphic designer with 2+ years of experience in creating visual worlds that speak. Minimal, futuristic, and cinematic design.">
+    <meta name="keywords" content="Graphic Designer, Visual Storyteller, 3D Creative, Portfolio, Design Studio">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="intro-active">
+    <!-- Fluid Canvas -->
+    <canvas id="fluid-canvas"></canvas>
+
+    <!-- Gooey Text Intro -->
+    <div id="intro-overlay">
+        <svg class="threshold-svg" aria-hidden="true" focusable="false">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                0 1 0 0 0
+                                0 0 1 0 0
+                                0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+
+        <div class="gooey-container">
+            <span id="text1" class="gooey-text"></span>
+            <span id="text2" class="gooey-text"></span>
+        </div>
+    </div>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-glow"></div>
+
+    <!-- Background Elements -->
+    <div class="animated-bg">
+        <div class="bg-sphere" id="sphere-1"></div>
+        <div class="bg-sphere" id="sphere-2"></div>
+    </div>
+
+
+    <!-- Navigation -->
+    <header class="main-header sticky top-0 z-50 w-full border-b border-transparent transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <nav class="flex h-16 items-center justify-between">
+                <!-- Wordmark -->
+                <div class="flex items-center gap-2">
+                    <svg class="h-6 w-auto text-primary" viewBox="0 0 84 24" fill="currentColor">
+                        <path
+                            d="M45.035 23.984c-1.34-.062-2.566-.441-3.777-1.16-1.938-1.152-3.465-3.187-4.02-5.36-.199-.784-.238-1.128-.234-2.058 0-.691.008-.87.062-1.207.23-1.5.852-2.883 1.852-4.144.297-.371 1.023-1.09 1.41-1.387 1.399-1.082 2.84-1.68 4.406-1.816.536-.047 1.528-.02 2.047.054 1.227.184 2.227.543 3.106 1.121 1.277.84 2.5 2.184 3.367 3.7.098.168.172.308.172.312-.004 0-1.047.723-2.32 1.598l-2.711 1.867c-.61.422-2.91 2.008-2.993 2.062l-.074.047-1-1.574c-.55-.867-1.008-1.594-1.012-1.61-.007-.019.922-.648 2.188-1.476 1.215-.793 2.2-1.453 2.191-1.46-.02-.032-.508-.27-.691-.34a5 5 0 0 0-.465-.13c-.371-.09-1.105-.125-1.426-.07-1.285.219-2.336 1.3-2.777 2.852-.215.761-.242 1.636-.074 2.355.129.527.383 1.102.691 1.543.234.332.727.82 1.047 1.031.664.434 1.195.586 1.969.555.613-.023 1.027-.129 1.64-.426 1.184-.574 2.16-1.554 2.828-2.843.122-.235.208-.372.227-.368.082.032 3.77 1.938 3.79 1.961.034.032-.407.93-.696 1.414a12 12 0 0 1-1.051 1.477c-.36.422-1.102 1.14-1.492 1.445a9.9 9.9 0 0 1-3.23 1.684 9.2 9.2 0 0 1-2.95.351M74.441 23.996c-1.488-.043-2.8-.363-4.066-.992-1.687-.848-2.992-2.14-3.793-3.774-.605-1.234-.863-2.402-.863-3.894.004-1.149.176-2.156.527-3.11.14-.378.531-1.171.75-1.515 1.078-1.703 2.758-2.934 4.805-3.524.847-.242 1.465-.332 2.433-.351 1.032-.024 1.743.055 2.48.277l.31.09.007 2.48c.004 1.364 0 2.481-.008 2.481a1 1 0 0 1-.12-.055c-.688-.347-2.09-.488-2.962-.296-.754.167-1.296.453-1.785.945a3.7 3.7 0 0 0-1.043 2.11c-.047.382-.02 1.109.055 1.437a3.4 3.4 0 0 0 .941 1.738c.75.75 1.715 1.102 2.875 1.05.645-.03 1.118-.14 1.563-.366q1.721-.864 2.02-3.145c.035-.293.042-1.266.042-7.957V0H84l-.012 8.434c-.008 7.851-.011 8.457-.054 8.757-.196 1.274-.586 2.25-1.301 3.243-1.293 1.808-3.555 3.07-6.145 3.437-.664.098-1.43.14-2.047.125M9.848 23.574a14 14 0 0 1-1.137-.152c-2.352-.426-4.555-1.781-6.117-3.774-.27-.335-.75-1.05-.95-1.406-1.156-2.047-1.695-4.27-1.64-6.77.047-1.995.43-3.66 1.23-5.316.524-1.086 1.04-1.87 1.793-2.715C4.567 1.72 6.652.535 8.793.171 9.68.02 10.093 0 12.297 0h1.789v5.441l-.961.016c-2.36.04-3.441.215-4.441.719-.836.414-1.278.879-1.895 1.976-.219.399-.535 1.02-.535 1.063 0 .02 1.285.027 3.918.027h3.914v5.113h-3.914c-2.54 0-3.918.008-3.918.028 0 .05.254.597.441.953.344.656.649 1.086 1.051 1.48.668.657 1.356.985 2.445 1.16.645.106 1.274.145 2.61.16l1.285.016v5.442l-2.055-.004a120 120 0 0 1-2.183-.016M16.469 14.715c0-5.504.011-9.04.031-9.29a5.54 5.54 0 0 1 1.527-3.48c.778-.82 1.922-1.457 3.118-1.734C21.915.035 22.422 0 24.39 0h1.652v4.914h-1.426c-1.324 0-1.445.004-1.644.055-.739.191-1.059.699-1.106 1.754l-.015.355h4.191v4.914h-4.184v11.602h-5.39ZM27.023 14.727c0-5.223.012-9.04.028-9.278.129-1.98 1.234-3.68 3.012-4.62.87-.462 1.777-.716 2.851-.802A61 61 0 0 1 34.945 0h1.649v4.914h-1.426c-1.32 0-1.441.004-1.64.055-.739.191-1.063.699-1.106 1.754l-.02.355h4.192v4.914H32.41v11.602h-5.387ZM55.48 15.406V7.22h4.66v1.363c0 1.3.005 1.363.051 1.363.04 0 .075-.054.133-.203.38-.98.969-1.68 1.711-2.031.563-.266 1.422-.43 2.492-.48l.414-.02v4.914l-.414.035c-.738.063-1.597.195-2.058.313-.297.082-.688.28-.875.449-.324.289-.532.703-.625 1.254-.094.547-.098.879-.098 5.144v4.274h-5.39Zm0 0" />
+                    </svg>
+                </div>
+
+                <!-- Links -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#hero" class="text-sm font-medium text-dim hover:text-white transition-colors">Home</a>
+                    <a href="#visual-storytelling"
+                        class="text-sm font-medium text-dim hover:text-white transition-colors">About</a>
+                    <a href="#projects"
+                        class="text-sm font-medium text-dim hover:text-white transition-colors">Projects</a>
+                    <a href="#contact"
+                        class="text-sm font-medium text-dim hover:text-white transition-colors">Contact</a>
+                </div>
+
+                <!-- Actions -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button
+                        class="btn-sm btn-outline px-4 py-2 border border-primary text-primary rounded hover:bg-primary/10 transition-colors">Sign
+                        In</button>
+                    <button
+                        class="btn-sm bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">Get
+                        Started</button>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden text-dim hover:text-white transition-colors">
+                    <i data-lucide="menu"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 hidden bg-background/95 backdrop-blur-lg md:hidden">
+        <div class="flex h-full flex-col p-6 pt-24">
+            <nav class="flex flex-col gap-6 text-2xl font-bold">
+                <a href="#hero" class="mobile-nav-link text-white hover:text-primary transition-colors">Home</a>
+                <a href="#visual-storytelling"
+                    class="mobile-nav-link text-white hover:text-primary transition-colors">About</a>
+                <a href="#projects" class="mobile-nav-link text-white hover:text-primary transition-colors">Projects</a>
+                <a href="#contact" class="mobile-nav-link text-white hover:text-primary transition-colors">Contact</a>
+            </nav>
+            <div class="mt-auto flex flex-col gap-4">
+                <button class="w-full rounded-2xl border border-primary p-4 font-bold text-primary">Sign In</button>
+                <button class="w-full rounded-2xl bg-primary p-4 font-bold text-white shadow-lg shadow-primary/20">Get
+                    Started</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section vh-center">
+            <div class="container text-center">
+                <div class="hero-label fade-up">GRAPHIC DESIGNER | VISUAL STORYTELLER</div>
+                <h1 class="hero-headline fade-up">Designing Visual<br>Worlds That Speak.</h1>
+                <p class="hero-subtext fade-up">Creative Director specializing in 3D visuals, cinematic storytelling,
+                    and futuristic brand identities.</p>
+                <div class="hero-actions fade-up">
+                    <button class="btn btn-primary magnetic" data-strength="30">View Projects</button>
+                    <button class="btn btn-outline magnetic" data-strength="30">Contact Me</button>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- Visual Storytelling Section (Redefined) -->
+        <section id="visual-storytelling" class="storytelling-section section-padding">
+            <div class="container overflow-hidden">
+                <div class="story-card glass reveal-up">
+                    <div class="card-glow"></div>
+
+                    <div class="story-layout">
+                        <!-- Left Content -->
+                        <div class="story-content">
+                            <div class="story-label fade-up">
+                                <span class="pulse-dot"></span>
+                                Creative Portfolio
+                            </div>
+
+                            <h2 class="story-title fade-up">
+                                About <span class="text-gradient italic">Yasaka.</span>
+                            </h2>
+
+                            <p class="story-desc fade-up">
+                                I don't just design; I engineer visual systems. With a background deeply rooted in
+                                typography and digital interaction, I bridge the gap between static aesthetics and
+                                dynamic user experiences.
+                                <br><br>
+                                <span class="text-main font-bold italic">"Just make your imaginations a reality"</span>
+                            </p>
+
+                            <div class="story-footer fade-up">
+                                <div class="profile-meta">
+                                    <div class="stats-row">
+                                        <div class="stat-item">
+                                            <span class="stat-val">2+</span>
+                                            <span class="stat-lbl">Years Exp.</span>
+                                        </div>
+                                        <div class="stat-divider"></div>
+                                        <div class="stat-item">
+                                            <span class="stat-val">50+</span>
+                                            <span class="stat-lbl">Projects</span>
+                                        </div>
+                                        <div class="stat-divider"></div>
+                                        <div class="stat-item">
+                                            <span class="stat-val">100%</span>
+                                            <span class="stat-lbl">Pixel Perfect</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Visual -->
+                        <div class="story-visual reveal-right">
+                            <div class="image-showcase glass">
+                                <img src="icn.jpg" alt="Visual Storyteller" class="main-portrait">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title reveal-up">Featured <span class="text-gradient">Projects</span></h2>
+                    <p class="section-desc reveal-up">A collection of selected works that push the boundaries of visual
+                        design.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card reveal-up" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800"
+                                alt="Project 1">
+                        </div>
+                        <div class="project-info">
+                            <h3>Cyberpunk 2077 Redux</h3>
+                            <p>3D Environment & Lighting</p>
+                            <button class="btn-text">View Case Study <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card reveal-up" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800"
+                                alt="Project 2">
+                        </div>
+                        <div class="project-info">
+                            <h3>Aura Branding</h3>
+                            <p>Minimalist Identity Design</p>
+                            <button class="btn-text">View Case Study <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card reveal-up" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=800"
+                                alt="Project 3">
+                        </div>
+                        <div class="project-info">
+                            <h3>Neon Dreams</h3>
+                            <p>Motion Graphics & VFX</p>
+                            <button class="btn-text">View Case Study <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What i bring to the table Section -->
+        <section id="philosophy" class="philosophy-section section-padding">
+            <div class="section-header text-center reveal-up">
+                <h2 class="section-title">What i bring <span class="text-gradient">to the table</span></h2>
+            </div>
+
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-year"><i data-lucide="palette"></i></div>
+                    <div class="timeline-content glass">
+                        <h3>Branding</h3>
+                        <ul class="service-list">
+                            <li>Logo systems</li>
+                            <li>Brand identity</li>
+                            <li>Color systems</li>
+                            <li>Typography</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-year"><i data-lucide="monitor"></i></div>
+                    <div class="timeline-content glass">
+                        <h3>UI / Web Design</h3>
+                        <ul class="service-list">
+                            <li>Layout systems</li>
+                            <li>Responsive design</li>
+                            <li>Design thinking</li>
+                            <li>Interaction awareness</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-year"><i data-lucide="pen-tool"></i></div>
+                    <div class="timeline-content glass">
+                        <h3>Graphic Design</h3>
+                        <ul class="service-list">
+                            <li>Posters</li>
+                            <li>Social media</li>
+                            <li>Marketing materials</li>
+                            <li>Visual storytelling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="contact-container text-center">
+                    <h2 class="section-title reveal-up">Let's Build Something <span
+                            class="text-gradient">Legendary.</span>
+                    </h2>
+                    <form class="contact-form reveal-up">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary magnetic" data-strength="20">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <button class="theme-toggle" id="theme-dark" title="Dark Mode"><i data-lucide="moon"></i></button>
+        <button class="theme-toggle" id="theme-neon" title="Neon Mode"><i data-lucide="zap"></i></button>
+        <button class="theme-toggle" id="theme-light" title="Light Mode"><i data-lucide="sun"></i></button>
+    </div>
+
+    <footer class="taped-footer">
+        <div class="taped-container">
+            <div class="tape-svg tape-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="95" height="80" viewBox="0 0 95 80" fill="none">
+                    <path d="M1 45L70.282 5L88.282 36.1769L19 76.1769L1 45Z" fill="#222222" />
+                </svg>
+            </div>
+            <div class="tape-svg tape-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="95" height="80" viewBox="0 0 95 80" fill="none">
+                    <path d="M1 45L70.282 5L88.282 36.1769L19 76.1769L1 45Z" fill="#222222" />
+                </svg>
+            </div>
+
+            <div class="footer-brand">
+                <h2>ActivationLed</h2>
+                <p>Behavioral Designed Activation Journeys for PLG SaaS to lift Aha! moments by 23%.</p>
+            </div>
+
+            <div class="footer-nav-grid">
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Freebies & Audits</a></li>
+                        <li><a href="#">Tools</a></li>
+                        <li><a href="#">Psychology</a></li>
+                        <li><a href="#" class="disabled">Blog <span class="badge-soon">soon</span></a></li>
+                        <li><a href="#" class="disabled">Components <span class="badge-soon">soon</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col hidden-mobile">
+                    <h4>Company <span class="badge-soon">soon</span></h4>
+                    <ul>
+                        <li><a href="#" class="disabled">Mission</a></li>
+                        <li><a href="#" class="disabled">Ecosystem</a></li>
+                        <li><a href="#" class="disabled">Affiliate Program</a></li>
+                        <li><a href="#" class="disabled">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col hidden-mobile">
+                    <h4>Compare <span class="badge-soon">soon</span></h4>
+                    <ul>
+                        <li><a href="#" class="disabled">DaaS</a></li>
+                        <li><a href="#" class="disabled">PLG Boutique</a></li>
+                        <li><a href="#" class="disabled">ProductLed</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright-links">
+                <p>©2025 ActivationLed. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#" style="margin-left: 1rem;">Terms & Co</a>
+                </div>
+            </div>
+
+            <div class="footer-socials">
+                <a href="#"><i data-lucide="linkedin"></i></a>
+                <a href="#"><i data-lucide="twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (CDNs) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+    <script src="lib/fluid.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

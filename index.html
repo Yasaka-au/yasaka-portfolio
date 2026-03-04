@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasaka_Creations_Studio</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Portfolio of Yasaka Creations Studio, transforming complex concepts into ethereal visual experiences. Digital Artistry & High-Fidelity Design.">
+    <meta name="keywords" content="Graphic Designer, Visual Storyteller, 3D Creative, Portfolio, Design Studio">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@0.407.0/dist/umd/lucide.min.js"></script>
+</head>
+
+
+<body class="intro-active">
+    <!-- Gooey Text Intro -->
+    <div id="intro-overlay">
+        <svg class="threshold-svg" aria-hidden="true" focusable="false">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                0 1 0 0 0
+                                0 0 1 0 0
+                                0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+
+        <div class="gooey-container">
+            <span id="text1" class="gooey-text"></span>
+            <span id="text2" class="gooey-text"></span>
+        </div>
+    </div>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-glow"></div>
+
+    <!-- Background Elements -->
+    <div class="animated-bg">
+        <div class="bg-sphere" id="sphere-1"></div>
+        <div class="bg-sphere" id="sphere-2"></div>
+    </div>
+
+    <!-- Fluid Canvas -->
+    <canvas id="fluid-canvas"></canvas>
+
+    <nav class="main-header">
+        <div class="logo">Yasaka<span>_Creations</span></div>
+        <div class="nav-links desktop-only">
+            <a href="#hero" class="nav-item">Home</a>
+            <a href="#visual-storytelling" class="nav-item">About</a>
+            <a href="#projects" class="nav-item">Projects</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-toggle-btn mobile-only">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu-overlay hidden">
+        <div class="mobile-nav-links">
+            <a href="#hero" class="mobile-nav-item">Home</a>
+            <a href="#visual-storytelling" class="mobile-nav-item">About</a>
+            <a href="#projects" class="mobile-nav-item">Projects</a>
+            <a href="#contact" class="mobile-nav-item">Contact</a>
+        </div>
+    </div>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="background-grid"></div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="role-wrapper">
+                        GRAPHIC DESIGNER | VISUAL STORYTELLER
+                    </div>
+
+                    <h1 class="reveal-up">
+                        Designing Visual <br>
+                        Worlds That Speak.
+                    </h1>
+
+                    <div class="tagline reveal-up">
+                        Creative Director specializing in 3D visuals, cinematic
+                        storytelling, and futuristic brand identities.
+                    </div>
+
+                    <div class="cta-group reveal-up">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal-right">
+                    <div class="ps-panel glass" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                        <div class="ps-top-bar">
+                            <div class="ps-header">
+                                <span id="panel-app-name">Photoshop</span>
+                                <div class="ps-header-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ps-body">
+                            <div id="panel-toolbar" class="ps-toolbar">
+                                <div class="tool-icon active"><i data-lucide="mouse-pointer-2"></i></div>
+                                <div class="tool-icon"><i data-lucide="type"></i></div>
+                                <div class="tool-icon"><i data-lucide="image"></i></div>
+                                <div class="tool-icon"><i data-lucide="crop"></i></div>
+                                <div class="tool-icon"><i data-lucide="layers"></i></div>
+                            </div>
+
+                            <div class="ps-workspace">
+                                <div id="panel-main-view" class="workspace-content">
+                                    <!-- This will morph between Canvas, Timeline, or Code -->
+                                    <div class="canvas-view active">
+                                        <div class="canvas-mask"></div>
+                                    </div>
+                                    <div class="timeline-view hidden">
+                                        <div class="timeline-track"></div>
+                                        <div class="timeline-track"></div>
+                                        <div class="timeline-playhead"></div>
+                                    </div>
+                                    <div class="editor-view hidden">
+                                        <div class="code-line"><span>1</span>
+                                            <div class="code-text c1"></div>
+                                        </div>
+                                        <div class="code-line"><span>2</span>
+                                            <div class="code-text c2"></div>
+                                        </div>
+                                        <div class="code-line"><span>3</span>
+                                            <div class="code-text c1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ps-sidebar">
+                                <div id="panel-tabs" class="ps-tabs">
+                                    <div class="ps-tab active">Layers</div>
+                                    <div class="ps-tab">Paths</div>
+                                </div>
+                                <div id="panel-layers-list" class="ps-layers-list">
+                                    <div class="layer-item active">
+                                        <div class="layer-vis"><i data-lucide="eye"></i></div>
+                                        <div class="layer-name">Text_Overlay</div>
+                                    </div>
+                                    <div class="layer-item">
+                                        <div class="layer-vis"><i data-lucide="eye"></i></div>
+                                        <div class="layer-name">Hero_Visual</div>
+                                    </div>
+                                    <div class="layer-item">
+                                        <div class="layer-vis"><i data-lucide="eye"></i></div>
+                                        <div class="layer-name">Background</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Visual Storytelling Section -->
+        <section id="visual-storytelling" class="storytelling-section section-padding">
+            <div class="container overflow-hidden">
+                <div class="story-card glass reveal-up">
+                    <div class="card-glow"></div>
+
+                    <div class="story-layout">
+                        <!-- Left Content -->
+                        <div class="story-content">
+                            <div class="story-label fade-up">
+                                <span class="pulse-dot green"></span>
+                                Online
+                            </div>
+
+                            <h2 class="story-title fade-up">
+                                About <span class="text-gradient italic">Yasaka.</span>
+                            </h2>
+
+                            <p class="story-desc fade-up">
+                                I don't just design; I engineer visual systems. With a background deeply rooted in
+                                typography and digital interaction, I bridge the gap between static aesthetics and
+                                dynamic user experiences.
+                                <br><br>
+                                <span class="text-main font-bold italic">"Just make your imaginations a reality"</span>
+                            </p>
+
+                            <div class="story-footer fade-up">
+                                <div class="profile-meta">
+                                    <div class="stats-row">
+                                        <div class="stat-item">
+                                            <span class="stat-val">4+</span>
+                                            <span class="stat-lbl">Years Exp.</span>
+                                        </div>
+                                        <div class="stat-divider"></div>
+                                        <div class="stat-item">
+                                            <span class="stat-val">100+</span>
+                                            <span class="stat-lbl">Projects</span>
+                                        </div>
+                                        <div class="stat-divider"></div>
+                                        <div class="stat-item">
+                                            <span class="stat-val">100%</span>
+                                            <span class="stat-lbl">Pixel Perfect</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Visual -->
+                        <div class="story-visual reveal-right">
+                            <div class="image-showcase glass">
+                                <img src="icn.jpg" alt="Visual Storyteller" class="main-portrait">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title reveal-up">Featured <span class="text-gradient">Projects</span></h2>
+                    <p class="section-desc reveal-up">A collection of selected works that push the boundaries of visual
+                        design.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card reveal-up" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800"
+                                alt="Project 1">
+                        </div>
+                        <div class="project-info">
+                            <h3>Video projects</h3>
+                            <p>Cinematic Storytelling & Visual FX</p>
+                            <button class="btn-text">View Case Study <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card reveal-up" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800"
+                                alt="Project 2">
+                        </div>
+                        <div class="project-info">
+                            <h3>Logo designs</h3>
+                            <p>Modern Minimalist Brand Identities</p>
+                            <button class="btn-text">View Case Study <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card reveal-up" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=800"
+                                alt="Project 3">
+                        </div>
+                        <div class="project-info">
+                            <h3>Grapic designs</h3>
+                            <p>Creative Visuals & Digital Media</p>
+                            <button class="btn-text">View Case Study <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What i bring to the table Section -->
+        <section id="philosophy" class="philosophy-section section-padding">
+            <div class="section-header text-center">
+                <h2 class="section-title">What i bring <span class="text-gradient">to the table</span></h2>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="timeline-year"><i data-lucide="palette"></i></div>
+                    <div class="timeline-content glass">
+                        <h3>Branding</h3>
+                        <ul class="service-list">
+                            <li>Logo systems</li>
+                            <li>Brand identity</li>
+                            <li>Color systems</li>
+                            <li>Typography</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year"><i data-lucide="monitor"></i></div>
+                    <div class="timeline-content glass">
+                        <h3>UI / Web Design</h3>
+                        <ul class="service-list">
+                            <li>Layout systems</li>
+                            <li>Responsive design</li>
+                            <li>Design thinking</li>
+                            <li>Interaction awareness</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year"><i data-lucide="pen-tool"></i></div>
+                    <div class="timeline-content glass">
+                        <h3>Graphic Design</h3>
+                        <ul class="service-list">
+                            <li>Posters</li>
+                            <li>Social media</li>
+                            <li>Marketing materials</li>
+                            <li>Visual storytelling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="contact-container text-center">
+                    <h2 class="section-title reveal-up">Let's Build Something <span
+                            class="text-gradient">Legendary.</span>
+                    </h2>
+
+                    <div class="contact-links-grid reveal-up">
+                        <a href="mailto:yasakaa786@gmail.com" class="contact-card glass">
+                            <div class="card-glow"></div>
+                            <span class="contact-label">Mail</span>
+                            <span class="contact-value text-muted">yasakaa786@gmail.com</span>
+                        </a>
+
+                        <a href="https://wa.me/94702771579" target="_blank" class="contact-card glass">
+                            <div class="card-glow"></div>
+                            <span class="contact-label">WhatsApp</span>
+                            <span class="contact-value text-muted">0702771579</span>
+                        </a>
+
+                        <a href="https://instagram.com/yasaka_au" target="_blank" class="contact-card glass">
+                            <div class="card-glow"></div>
+                            <span class="contact-label">Instagram</span>
+                            <span class="contact-value text-muted">yasaka_au</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <footer class="taped-footer">
+        <div class="taped-container">
+            <div class="tape-svg tape-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="95" height="80" viewBox="0 0 95 80" fill="none">
+                    <path d="M1 45L70.282 5L88.282 36.1769L19 76.1769L1 45Z" fill="#222222" />
+                </svg>
+            </div>
+            <div class="tape-svg tape-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="95" height="80" viewBox="0 0 95 80" fill="none">
+                    <path d="M1 45L70.282 5L88.282 36.1769L19 76.1769L1 45Z" fill="#222222" />
+                </svg>
+            </div>
+
+            <div class="footer-brand">
+                <h2>Yasaka<span>_Creations</span></h2>
+                <p>Digital Artistry & High-Fidelity Visual Experiences.</p>
+            </div>
+
+            <div class="footer-nav-grid">
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#visual-storytelling">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col hidden-mobile">
+                    <h4>Studio <span class="badge-soon">soon</span></h4>
+                    <ul>
+                        <li><a href="#" class="disabled">Archive</a></li>
+                        <li><a href="#" class="disabled">Process</a></li>
+                        <li><a href="#" class="disabled">Manifesto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright-links">
+                <p>©2025 Yasaka Creations Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts (CDNs) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+    <script src="lib/fluid.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
