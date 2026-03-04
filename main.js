@@ -328,20 +328,20 @@ document.addEventListener('DOMContentLoaded', () => {
             layers: ["Text_Overlay", "Hero_Visual", "Background"]
         },
         {
-            name: "Illustrator",
+            name: "Figma",
             class: "ai-theme",
             view: "canvas-view",
-            tools: ["pen-tool", "mouse-pointer-2", "shapes", "palette", "layers"],
-            tabs: ["Artboards", "Properties"],
-            layers: ["Vector_Logo", "Brand_Pattern", "Outline_Draft"]
+            tools: ["mouse-pointer-2", "shapes", "palette", "layers", "component"],
+            tabs: ["Assets", "Layers"],
+            layers: ["Design_System", "User_Flow", "High_Fi_Wireframe"]
         },
         {
-            name: "Premiere Pro",
+            name: "After Effects",
             class: "pr-theme",
             view: "timeline-view",
             tools: ["film", "scissors", "music", "video", "play"],
             tabs: ["Timeline", "Effects"],
-            layers: ["Final_Edit", "Audio_Track", "Adjustment_Clip"]
+            layers: ["Motion_Graphics", "Composition", "Keyframes"]
         },
         {
             name: "VS Code",
