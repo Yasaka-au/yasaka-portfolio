@@ -1,0 +1,239 @@
+/* Graphics Subpage Specific Styles */
+
+.subpage-active {
+    background-color: var(--bg-dark);
+}
+
+.subpage-content {
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.project-hero {
+    text-align: center;
+    padding: 40px 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.project-hero h1 {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin: 0;
+    white-space: normal;
+}
+
+.project-hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.project-hero h1::before {
+    display: none;
+    /* Remove the vertical line from main h1 */
+}
+
+.gallery-section {
+    padding-bottom: 100px;
+    position: relative;
+}
+
+/* Loading State */
+.loading-container {
+    text-align: center;
+    padding: 100px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loading-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.loading-title span {
+    color: var(--accent-warm);
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+}
+
+.loading-bar {
+    width: 200px;
+    height: 2px;
+    background: var(--glass-border);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loading-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    background: var(--neon-gradient);
+    animation: loading-move 2s infinite ease-in-out;
+}
+
+@keyframes loading-move {
+    0% {
+        left: -30%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Masonry Grid */
+.masonry-grid {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.masonry-item {
+    width: calc(33.333% - 20px);
+    /* 3 columns with 20px gutter */
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.6s ease;
+}
+
+.masonry-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s ease;
+}
+
+/* Masonry Item with Video Support */
+.masonry-item.video-item {
+    aspect-ratio: 16/9;
+    background: #000;
+}
+
+.masonry-item iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.masonry-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+    z-index: 10;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Mobile Refinements */
+@media (max-width: 768px) {
+    .subpage-content {
+        padding-top: 60px;
+    }
+
+    .main-header.scrolled {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .project-hero {
+        padding: 30px 0 40px;
+        gap: 15px;
+    }
+
+    .project-hero h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        letter-spacing: -1px;
+    }
+
+    .project-hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .masonry-item {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .masonry-grid {
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+}
+
+/* Utilities */
+.text-gradient {
+    background: var(--neon-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subpage-active .main-header {
+    background: rgba(11, 15, 26, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(201, 198, 255, 0.1);
+}
+
+/* Footer override */
+.subpage-active .taped-footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+}
+
+.subpage-active .footer-bottom p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}

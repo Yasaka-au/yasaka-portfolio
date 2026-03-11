@@ -220,6 +220,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let cooldown = cooldownTime;
     let introFinished = false;
 
+    // Check if intro was already seen in this session
+    const introSeen = sessionStorage.getItem('introSeen');
+
     // Initialize first words
     if (elts.text1 && elts.text2) {
         elts.text1.textContent = texts[0];
@@ -294,6 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const overlay = document.getElementById('intro-overlay');
         overlay.classList.add('fade-out');
         document.body.classList.remove('intro-active');
+        sessionStorage.setItem('introSeen', 'true');
 
         // Trigger Hero Reveal after intro
         const tl = gsap.timeline();
@@ -307,8 +311,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Start intro
-    animateIntro();
+    // Start intro or skip if seen
+    if (introSeen === 'true') {
+        finishIntro();
+    } else {
+        animateIntro();
+    }
 
     // 13. SOFTWARE PANEL MORPHING
     const panelAppName = document.getElementById('panel-app-name');
